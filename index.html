@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusHub — Your Campus, Connected</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <a class="navbar-brand" href="#" onclick="showPage('landing')">🎓 CampusHub</a>
+  <div class="navbar-links" id="navLinks">
+    <a href="#" onclick="showPage('marketplace')" id="nav-marketplace" class="nav-link"><span class="nav-icon">🛍️</span> Marketplace</a>
+    <a href="#" onclick="showPage('community')" id="nav-community" class="nav-link"><span class="nav-icon">💬</span> Community</a>
+    <a href="#" onclick="showPage('food')" id="nav-food" class="nav-link"><span class="nav-icon">🍕</span> Food</a>
+    <a href="#" onclick="showPage('rentals')" id="nav-rentals" class="nav-link"><span class="nav-icon">📦</span> Rentals</a>
+  </div>
+  <div class="navbar-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" id="themeBtn">☀️</button>
+    <a class="btn-nav-login" href="#" onclick="showPage('login')" id="navLoginBtn">Log in</a>
+    <a class="btn-nav-signup" href="#" onclick="showPage('signup')" id="navSignupBtn">Sign up</a>
+    <button class="avatar-btn" id="navAvatar" onclick="showPage('dashboard')" title="Dashboard">S</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#" onclick="showPage('marketplace');toggleMobileNav()"><span>🛍️</span> Marketplace</a>
+  <a href="#" onclick="showPage('community');toggleMobileNav()"><span>💬</span> Community</a>
+  <a href="#" onclick="showPage('food');toggleMobileNav()"><span>🍕</span> Food</a>
+  <a href="#" onclick="showPage('rentals');toggleMobileNav()"><span>📦</span> Rentals</a>
+  <a href="#" onclick="showPage('messages');toggleMobileNav()"><span>📩</span> Messages</a>
+  <div class="mobile-nav-actions">
+    <a class="btn btn-outline btn-sm" href="#" onclick="showPage('login');toggleMobileNav()" style="flex:1;border-radius:50px;">Log in</a>
+    <a class="btn btn-primary btn-sm" href="#" onclick="showPage('signup');toggleMobileNav()" style="flex:1;border-radius:50px;">Sign up</a>
+  </div>
+</div>
+
+<!-- ===================================================
+     LANDING PAGE
+     =================================================== -->
+<div class="page active" id="page-landing">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Now live at 100+ campuses across India
+        </div>
+        <h1>Your Campus,<br /><span class="gradient-text">Fully Connected</span></h1>
+        <p>Buy, sell, rent, eat, and connect — all within your own campus community. Verified students only.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="showPage('signup')">🚀 Get Started Free</button>
+          <button class="btn btn-outline btn-lg" onclick="showPage('marketplace')">Browse Listings</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span>12K+</span><p>Active Students</p></div>
+          <div class="hero-stat"><span>4.8K</span><p>Listings Posted</p></div>
+          <div class="hero-stat"><span>200+</span><p>Campuses</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="float-card">
+        <div class="float-card-icon purple">🛍️</div>
+        <div>
+          <strong>MacBook Pro listed</strong>
+          <span>₹62,000 · NIT Trichy</span>
+        </div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-icon green">🍕</div>
+        <div>
+          <strong>Order delivered!</strong>
+          <span>Campus Café · 18 min</span>
+        </div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-icon orange">📢</div>
+        <div>
+          <strong>Internship at Google</strong>
+          <span>Posted 2 mins ago</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header" style="flex-direction:column;align-items:flex-start;gap:12px;">
+        <h2 class="section-title">Everything your campus <span>needs</span></h2>
+        <p style="color:var(--text2);max-width:500px;">One platform, six powerful features built for student life.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" onclick="showPage('marketplace')">
+          <span class="feature-icon">🛒</span>
+          <h3>Marketplace</h3>
+          <p>Buy & sell textbooks, electronics, furniture and more within your campus. OLX-style listings with price negotiation.</p>
+        </div>
+        <div class="feature-card" onclick="showPage('community')">
+          <span class="feature-icon">💬</span>
+          <h3>Community Feed</h3>
+          <p>Post events, internships, opportunities, and announcements. Your campus social board — live and real-time.</p>
+        </div>
+        <div class="feature-card" onclick="showPage('food')">
+          <span class="feature-icon">🍕</span>
+          <h3>Food Ordering</h3>
+          <p>Order from campus cafés and nearby restaurants. Fast delivery to your dorm. Just ₹20 platform fee.</p>
+        </div>
+        <div class="feature-card" onclick="showPage('rentals')">
+          <span class="feature-icon">📦</span>
+          <h3>Rentals</h3>
+          <p>Rent bikes, books, instruments and gadgets from fellow students. Daily, weekly, or monthly plans.</p>
+        </div>
+        <div class="feature-card" onclick="showPage('messages')">
+          <span class="feature-icon">🔒</span>
+          <h3>Secure Chat</h3>
+          <p>In-app messaging with privacy-first design. Number masking, call scheduling, and price negotiation built in.</p>
+        </div>
+        <div class="feature-card" onclick="showPage('signup')">
+          <span class="feature-icon">🎓</span>
+          <h3>Verified Campus Only</h3>
+          <p>Only students from your college can view and interact. Safe, trusted, and community-first by design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-section">
+    <div class="container">
+      <h2 class="section-title text-center mb-24">How it <span>works</span></h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Sign Up</h3>
+          <p>Register with your college email or student ID. Verify once, access everything.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Pick Your Campus</h3>
+          <p>Select your university. You'll only see content from your own campus community.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>List or Explore</h3>
+          <p>Post listings, browse the marketplace, order food, or join community discussions.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Connect Safely</h3>
+          <p>Chat, negotiate, and transact — all within a verified, campus-only environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:80px 0;text-align:center;">
+    <div class="container-sm">
+      <h2 style="font-family:var(--font-display);font-size:2.2rem;font-weight:800;margin-bottom:16px;">Ready to join your campus?</h2>
+      <p style="color:var(--text2);margin-bottom:36px;font-size:1.05rem;">Free to join. Verified students only. Your campus, your community.</p>
+      <button class="btn btn-primary btn-lg" onclick="showPage('signup')">🎓 Join CampusHub Now</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:var(--bg2);border-top:1px solid var(--border2);padding:40px 0;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <div class="navbar-brand" style="font-size:1.2rem;">🎓 CampusHub</div>
+      <div style="display:flex;gap:24px;font-size:0.85rem;color:var(--text3);">
+        <a href="#" style="color:var(--text3)">Privacy</a>
+        <a href="#" style="color:var(--text3)">Terms</a>
+        <a href="#" style="color:var(--text3)">Help</a>
+        <a href="#" style="color:var(--text3)">Contact</a>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text3);">© 2025 CampusHub. Built for students.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================================================
+     LOGIN PAGE
+     =================================================== -->
+<div class="page" id="page-login">
+  <div class="auth-page">
+    <div class="auth-box">
+      <div class="auth-logo">🎓 CampusHub</div>
+      <h2>Welcome back</h2>
+      <p class="auth-subtitle">Sign in to your campus account</p>
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <div class="input-icon-wrap">
+            <span class="input-icon">📧</span>
+            <input type="email" id="loginEmail" placeholder="yourname@college.edu" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="input-icon-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required />
+          </div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;margin-bottom:20px;">
+          <a href="#" style="font-size:0.85rem;color:var(--primary-light);">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In →</button>
+      </form>
+      <div class="auth-divider">or continue with</div>
+      <button class="btn btn-ghost btn-block" style="border-radius:50px;margin-bottom:8px;">
+        <span>🌐</span> Continue with Google
+      </button>
+      <div class="auth-footer">
+        Don't have an account? <a href="#" onclick="showPage('signup')">Sign up free</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================
+     SIGNUP PAGE
+     =================================================== -->
+<div class="page" id="page-signup">
+  <div class="auth-page">
+    <div class="auth-box">
+      <div class="auth-logo">🎓 CampusHub</div>
+      <h2>Create account</h2>
+      <p class="auth-subtitle">Join your campus community today</p>
+      <form onsubmit="handleSignup(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" id="signupFirst" placeholder="Rahul" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" id="signupLast" placeholder="Sharma" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">College Email</label>
+          <div class="input-icon-wrap">
+            <span class="input-icon">📧</span>
+            <input type="email" id="signupEmail" placeholder="rahul@nit.ac.in" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <div class="input-icon-wrap">
+            <span class="input-icon">📱</span>
+            <input type="tel" id="signupPhone" placeholder="+91 9876543210" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">College / University</label>
+          <select id="signupCollege" required>
+            <option value="">Select your institution</option>
+            <option>NIT Trichy</option>
+            <option>IIT Bombay</option>
+            <option>IIT Delhi</option>
+            <option>BITS Pilani</option>
+            <option>VIT Vellore</option>
+            <option>SRM University</option>
+            <option>Manipur University</option>
+            <option>NIT Manipur</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Student ID <span style="color:var(--text3);font-weight:400">(optional)</span></label>
+          <div class="input-icon-wrap">
+            <span class="input-icon">🪪</span>
+            <input type="text" id="signupStudentId" placeholder="e.g. 2021CS101" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="input-icon-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="signupPassword" placeholder="Min. 8 characters" required minlength="8"/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account 🎓</button>
+      </form>
+      <p class="terms-text">By signing up you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+      <div class="auth-footer">
+        Already have an account? <a href="#" onclick="showPage('login')">Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================
+     DASHBOARD
+     =================================================== -->
+<div class="page" id="page-dashboard">
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <p class="sidebar-section-label">Overview</p>
+      <div class="sidebar-link active" onclick="switchDashTab('overview')"><span class="s-icon">🏠</span> Dashboard</div>
+      <div class="sidebar-link" onclick="switchDashTab('profile')"><span class="s-icon">👤</span> My Profile</div>
+      <div class="sidebar-link" onclick="showPage('messages')"><span class="s-icon">💬</span> Messages <span class="badge green">3</span></div>
+      <p class="sidebar-section-label">Activity</p>
+      <div class="sidebar-link" onclick="switchDashTab('listings')"><span class="s-icon">📋</span> My Listings</div>
+      <div class="sidebar-link" onclick="switchDashTab('orders')"><span class="s-icon">📦</span> My Orders</div>
+      <div class="sidebar-link" onclick="switchDashTab('rentals')"><span class="s-icon">🔄</span> My Rentals</div>
+      <div class="sidebar-link" onclick="switchDashTab('saved')"><span class="s-icon">❤️</span> Saved Items</div>
+      <p class="sidebar-section-label">Community</p>
+      <div class="sidebar-link" onclick="showPage('community')"><span class="s-icon">📢</span> Community Posts</div>
+      <div class="sidebar-link"><span class="s-icon">🔔</span> Notifications <span class="badge">5</span></div>
+      <div style="flex:1"></div>
+      <div class="sidebar-link" onclick="handleLogout()" style="margin-top:auto;color:var(--danger)"><span class="s-icon">🚪</span> Logout</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Overview Tab -->
+      <div id="dash-overview">
+        <div style="margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;">Welcome back, <span id="dashUsername">Student</span> 👋</h2>
+            <p style="color:var(--text2);font-size:0.9rem;" id="dashCollege">NIT Trichy · Verified Student</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="showPage('marketplace')">+ New Listing</button>
+        </div>
+        <div class="dash-stats-grid">
+          <div class="stat-card">
+            <div class="stat-card-top"><div class="stat-icon purple">🛍️</div><span class="stat-change">+12%</span></div>
+            <div class="stat-value">3</div>
+            <div class="stat-label">Active Listings</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top"><div class="stat-icon green">📦</div><span class="stat-change">+5%</span></div>
+            <div class="stat-value">7</div>
+            <div class="stat-label">Orders Placed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top"><div class="stat-icon orange">❤️</div></div>
+            <div class="stat-value">12</div>
+            <div class="stat-label">Saved Items</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top"><div class="stat-icon blue">💬</div><span class="stat-change green">3 new</span></div>
+            <div class="stat-value">18</div>
+            <div class="stat-label">Messages</div>
+          </div>
+        </div>
+
+        <!-- Recent activity -->
+        <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:16px;">Recent Activity</h3>
+        <div class="card" style="padding:0;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border2);">
+            <span style="font-size:1.4rem;">📱</span>
+            <div style="flex:1"><strong style="font-size:0.9rem;">iPhone 13 listed</strong><br/><span class="text-sm text-muted">Marketplace · 2h ago</span></div>
+            <span class="status-badge status-active">Active</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border2);">
+            <span style="font-size:1.4rem;">🍕</span>
+            <div style="flex:1"><strong style="font-size:0.9rem;">Order from Campus Café</strong><br/><span class="text-sm text-muted">Food · Yesterday</span></div>
+            <span class="status-badge status-active">Delivered</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border2);">
+            <span style="font-size:1.4rem;">💬</span>
+            <div style="flex:1"><strong style="font-size:0.9rem;">Message from Priya about Guitar</strong><br/><span class="text-sm text-muted">Chat · 3h ago</span></div>
+            <span class="status-badge status-pending">Unread</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;">
+            <span style="font-size:1.4rem;">📢</span>
+            <div style="flex:1"><strong style="font-size:0.9rem;">Post got 24 likes</strong><br/><span class="text-sm text-muted">Community · 1d ago</span></div>
+            <span class="status-badge status-active">↑ Trending</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Tab -->
+      <div id="dash-profile" class="hidden">
+        <div class="profile-hero">
+          <div class="profile-avatar-big" id="profileInitial">S</div>
+          <div class="profile-info">
+            <h2 id="profileName">Student Name</h2>
+            <p id="profileEmail">student@college.edu · 📱 +91 XXXXXXXXXX</p>
+            <div class="profile-tags">
+              <span class="profile-tag verified">✅ Verified Student</span>
+              <span class="profile-tag" id="profileCollege">NIT Trichy</span>
+              <span class="profile-tag">⭐ 4.9 Rating</span>
+              <span class="profile-tag">📅 Joined 2024</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:20px;">Edit Profile</h3>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">First Name</label><input type="text" placeholder="Rahul"/></div>
+            <div class="form-group"><label class="form-label">Last Name</label><input type="text" placeholder="Sharma"/></div>
+          </div>
+          <div class="form-group"><label class="form-label">Bio</label><textarea rows="3" placeholder="Tell your campus about yourself..."></textarea></div>
+          <button class="btn btn-primary">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- Listings Tab -->
+      <div id="dash-listings" class="hidden">
+        <div class="section-header">
+          <h2 class="section-title">My <span>Listings</span></h2>
+          <button class="btn btn-primary btn-sm" onclick="showPage('marketplace')">+ Add Listing</button>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-img">📱<span class="product-condition condition-good">Good</span></div>
+            <div class="product-info">
+              <h3>iPhone 13 128GB</h3>
+              <div class="product-price">₹42,000</div>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-sm btn-outline" style="flex:1">Edit</button>
+                <button class="btn btn-sm btn-ghost" style="flex:1">Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">📚<span class="product-condition condition-fair">Fair</span></div>
+            <div class="product-info">
+              <h3>Engineering Maths Vol.2</h3>
+              <div class="product-price">₹180</div>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-sm btn-outline" style="flex:1">Edit</button>
+                <button class="btn btn-sm btn-ghost" style="flex:1">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orders Tab -->
+      <div id="dash-orders" class="hidden">
+        <h2 class="section-title mb-24">My <span>Orders</span></h2>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Item</th><th>Seller</th><th>Price</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody>
+              <tr><td>🍕 Campus Biryani</td><td>Campus Café</td><td>₹120</td><td><span class="status-badge status-active">Delivered</span></td><td>May 7</td></tr>
+              <tr><td>📚 Thermodynamics Book</td><td>Anjali K.</td><td>₹250</td><td><span class="status-badge status-active">Completed</span></td><td>May 3</td></tr>
+              <tr><td>🔌 USB-C Hub</td><td>Rohan M.</td><td>₹800</td><td><span class="status-badge status-pending">In Transit</span></td><td>May 8</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Saved Tab -->
+      <div id="dash-saved" class="hidden">
+        <h2 class="section-title mb-24">Saved <span>Items</span></h2>
+        <div class="products-grid">
+          <div class="product-card"><div class="product-img">🎸<span class="wishlist-btn saved">❤️</span></div><div class="product-info"><h3>Acoustic Guitar</h3><div class="product-price">₹3,500</div><button class="btn btn-primary btn-sm btn-block" onclick="showPage('messages')">Contact Seller</button></div></div>
+          <div class="product-card"><div class="product-img">💻<span class="wishlist-btn saved">❤️</span></div><div class="product-info"><h3>Dell XPS 13 Laptop</h3><div class="product-price">₹58,000</div><button class="btn btn-primary btn-sm btn-block" onclick="showPage('messages')">Contact Seller</button></div></div>
+        </div>
+      </div>
+
+      <!-- Rentals Tab -->
+      <div id="dash-rentals" class="hidden">
+        <h2 class="section-title mb-24">My <span>Rentals</span></h2>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Item</th><th>Owner</th><th>Plan</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>🚲 Cycle (Hero)</td><td>Deepak S.</td><td>Weekly</td><td>₹200</td><td><span class="status-badge status-active">Active</span></td></tr>
+              <tr><td>🎹 Keyboard</td><td>Music Club</td><td>Monthly</td><td>₹600</td><td><span class="status-badge status-pending">Pending</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ===================================================
+     MARKETPLACE PAGE
+     =================================================== -->
+<div class="page" id="page-marketplace">
+  <div class="container" style="padding-top:32px;padding-bottom:80px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:12px;">
+      <div>
+        <h1 style="font-family:var(--font-display);font-size:2rem;font-weight:800;">Campus <span style="color:var(--primary-light)">Marketplace</span></h1>
+        <p style="color:var(--text2);margin-top:4px;">Buy & sell within your campus community</p>
+      </div>
+      <button class="btn btn-primary" onclick="openModal('postListingModal')">+ Post Listing</button>
+    </div>
+
+    <!-- Search -->
+    <div class="search-bar-wrap">
+      <div class="search-bar">
+        <span class="s-icon">🔍</span>
+        <input type="text" placeholder="Search listings, items, categories..." oninput="filterProducts(this.value)" />
+      </div>
+      <button class="filter-btn">⚙️ Filters</button>
+      <select style="width:auto;flex-shrink:0;border-radius:50px;height:48px;" onchange="sortProducts(this.value)">
+        <option>Latest</option><option>Price: Low to High</option><option>Price: High to Low</option>
+      </select>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories-scroll">
+      <div class="cat-chip active" onclick="filterByCategory(this,'all')">🌟 All</div>
+      <div class="cat-chip" onclick="filterByCategory(this,'electronics')">📱 Electronics</div>
+      <div class="cat-chip" onclick="filterByCategory(this,'books')">📚 Books & Notes</div>
+      <div class="cat-chip" onclick="filterByCategory(this,'furniture')">🪑 Furniture</div>
+      <div class="cat-chip" onclick="filterByCategory(this,'vehicles')">🚲 Vehicles</div>
+      <div class="cat-chip" onclick="filterByCategory(this,'clothing')">👕 Clothing</div>
+      <div class="cat-chip" onclick="filterByCategory(this,'misc')">📦 Miscellaneous</div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</div>
+
+<!-- ===================================================
+     COMMUNITY PAGE
+     =================================================== -->
+<div class="page" id="page-community">
+  <div class="container" style="padding-top:32px;padding-bottom:80px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+      <div>
+        <h1 style="font-family:var(--font-display);font-size:2rem;font-weight:800;">Campus <span style="color:var(--primary-light)">Community</span></h1>
+        <p style="color:var(--text2);margin-top:4px;">Events, internships, opportunities & more</p>
+      </div>
+      <button class="btn btn-primary" onclick="openModal('createPostModal')">+ Create Post</button>
+    </div>
+
+    <!-- Filter chips -->
+    <div class="categories-scroll" style="margin-bottom:28px;">
+      <div class="cat-chip active" onclick="filterPosts(this,'all')">🌟 All</div>
+      <div class="cat-chip" onclick="filterPosts(this,'event')">🎉 Events</div>
+      <div class="cat-chip" onclick="filterPosts(this,'internship')">💼 Internships</div>
+      <div class="cat-chip" onclick="filterPosts(this,'ticket')">🎫 Tickets</div>
+      <div class="cat-chip" onclick="filterPosts(this,'announce')">📢 Announcements</div>
+      <div class="cat-chip" onclick="filterPosts(this,'opportunity')">🚀 Opportunities</div>
+    </div>
+
+    <div class="community-layout">
+      <!-- Feed -->
+      <div id="communityFeed"></div>
+
+      <!-- Sidebar Widgets -->
+      <div>
+        <div class="sidebar-widget">
+          <h4>🔥 Trending Tags</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span class="chip">#Internship</span><span class="chip">#TechFest2025</span>
+            <span class="chip">#Placement</span><span class="chip">#CodeContest</span>
+            <span class="chip">#HackathonAlert</span>
+          </div>
+        </div>
+        <div class="sidebar-widget">
+          <h4>📅 Upcoming Events</h4>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:var(--primary);color:#fff;width:44px;height:44px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-display);"><span style="font-size:1rem;font-weight:800;">15</span><span style="font-size:0.62rem;">MAY</span></div>
+              <div><strong style="font-size:0.88rem;">TechFest 2025</strong><br/><span class="text-sm text-muted">Main Auditorium</span></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;">
+              <div style="background:var(--accent);color:#fff;width:44px;height:44px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-display);"><span style="font-size:1rem;font-weight:800;">20</span><span style="font-size:0.62rem;">MAY</span></div>
+              <div><strong style="font-size:0.88rem;">Campus Music Night</strong><br/><span class="text-sm text-muted">Open Air Stage</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-widget">
+          <h4>💼 Latest Internships</h4>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="background:var(--bg2);border-radius:10px;padding:12px;"><strong style="font-size:0.88rem;">Google SWE Intern</strong><br/><span class="text-sm text-muted">Remote · ₹80K/mo</span></div>
+            <div style="background:var(--bg2);border-radius:10px;padding:12px;"><strong style="font-size:0.88rem;">Amazon SDE Intern</strong><br/><span class="text-sm text-muted">Bangalore · ₹60K/mo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================
+     FOOD PAGE
+     =================================================== -->
+<div class="page" id="page-food">
+  <div class="container" style="padding-top:32px;padding-bottom:100px;">
+    <div class="food-hero">
+      <div style="font-size:3rem;margin-bottom:12px;">🍕</div>
+      <h2>Order Food to Your Campus</h2>
+      <p>Campus cafés + nearby restaurants · ₹20 platform fee · Deliver to your hostel</p>
+      <div style="max-width:440px;margin:0 auto;position:relative;">
+        <span style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:1.1rem;">🔍</span>
+        <input type="text" placeholder="Search restaurants or dishes..." style="padding-left:44px;border-radius:50px;height:48px;" />
+      </div>
+    </div>
+
+    <div class="categories-scroll" style="margin-bottom:28px;">
+      <div class="cat-chip active">🌟 All</div>
+      <div class="cat-chip">🍛 Indian</div>
+      <div class="cat-chip">🍕 Fast Food</div>
+      <div class="cat-chip">☕ Café</div>
+      <div class="cat-chip">🥗 Healthy</div>
+      <div class="cat-chip">🥤 Beverages</div>
+    </div>
+
+    <div class="section-header">
+      <h2 class="section-title">Restaurants <span>Near You</span></h2>
+      <span class="chip">📍 Campus Area</span>
+    </div>
+    <div class="restaurants-grid" id="restaurantsGrid"></div>
+  </div>
+
+  <!-- Cart Float -->
+  <div class="cart-float" id="cartFloat" onclick="openModal('cartModal')">
+    🛒 View Cart · <span id="cartTotal">₹0</span>
+    <div class="cart-count" id="cartCount">0</div>
+  </div>
+</div>
+
+<!-- ===================================================
+     RENTALS PAGE
+     =================================================== -->
+<div class="page" id="page-rentals">
+  <div class="container" style="padding-top:32px;padding-bottom:80px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+      <div>
+        <h1 style="font-family:var(--font-display);font-size:2rem;font-weight:800;">Campus <span style="color:var(--accent2)">Rentals</span></h1>
+        <p style="color:var(--text2);margin-top:4px;">Rent anything from fellow students</p>
+      </div>
+      <button class="btn btn-accent" onclick="showToast('List your item for rent coming soon!','💡')">+ List for Rent</button>
+    </div>
+
+    <div class="categories-scroll" style="margin-bottom:28px;">
+      <div class="cat-chip active">🌟 All</div>
+      <div class="cat-chip">🚲 Vehicles</div>
+      <div class="cat-chip">📚 Books</div>
+      <div class="cat-chip">🎵 Instruments</div>
+      <div class="cat-chip">💻 Electronics</div>
+      <div class="cat-chip">📦 Other</div>
+    </div>
+
+    <div class="products-grid" id="rentalsGrid"></div>
+  </div>
+</div>
+
+<!-- ===================================================
+     MESSAGES PAGE
+     =================================================== -->
+<div class="page" id="page-messages">
+  <div class="container" style="padding-top:24px;padding-bottom:24px;">
+    <div class="chat-layout">
+      <!-- Sidebar -->
+      <div class="chat-sidebar">
+        <div class="chat-sidebar-header">
+          <h3>Messages</h3>
+          <div style="position:relative;">
+            <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);">🔍</span>
+            <input type="text" placeholder="Search chats..." style="padding-left:36px;border-radius:50px;height:38px;font-size:0.85rem;" />
+          </div>
+        </div>
+        <div class="chat-list" id="chatList"></div>
+      </div>
+
+      <!-- Main Chat -->
+      <div class="chat-main">
+        <div class="chat-main-header">
+          <div class="chat-avatar" style="background:linear-gradient(135deg,#6c47ff,#00d4aa);color:#fff;font-weight:700;">P</div>
+          <div class="info">
+            <strong>Priya S.</strong>
+            <span>🟢 Online · Selling Guitar</span>
+          </div>
+          <div class="chat-header-actions">
+            <button class="btn btn-ghost btn-sm btn-icon" title="Call" onclick="showToast('Initiating masked call...','📞')">📞</button>
+            <button class="btn btn-ghost btn-sm btn-icon" title="Info">ℹ️</button>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input-bar">
+          <button class="btn btn-ghost btn-icon" title="Attach" onclick="showToast('Attach file coming soon','📎')">📎</button>
+          <textarea id="msgInput" placeholder="Type a message..." rows="1" onkeydown="handleMsgEnter(event)" oninput="autoResize(this)"></textarea>
+          <button class="btn btn-primary btn-icon" onclick="sendMessage()" title="Send">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================
+     ADMIN PAGE
+     =================================================== -->
+<div class="page" id="page-admin">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <p class="sidebar-section-label">Admin Panel</p>
+      <div class="sidebar-link active" onclick="switchAdminTab('users')"><span class="s-icon">👥</span> Users</div>
+      <div class="sidebar-link" onclick="switchAdminTab('listings')"><span class="s-icon">🛍️</span> Listings</div>
+      <div class="sidebar-link" onclick="switchAdminTab('reports')"><span class="s-icon">🚨</span> Reports <span class="badge">2</span></div>
+      <div class="sidebar-link" onclick="switchAdminTab('restaurants')"><span class="s-icon">🍕</span> Restaurants</div>
+      <div class="sidebar-link" onclick="switchAdminTab('transactions')"><span class="s-icon">💳</span> Transactions</div>
+      <div style="flex:1"></div>
+      <div class="sidebar-link" onclick="showPage('dashboard')"><span class="s-icon">← </span> Back to App</div>
+    </aside>
+    <main class="main-content">
+      <div id="admin-users">
+        <div class="section-header" style="margin-bottom:20px;">
+          <h2 class="section-title">Manage <span>Users</span></h2>
+          <button class="btn btn-primary btn-sm" onclick="showToast('Invite sent!','✅')">+ Invite User</button>
+        </div>
+        <div class="dash-stats-grid" style="margin-bottom:28px;">
+          <div class="stat-card"><div class="stat-card-top"><div class="stat-icon purple">👥</div></div><div class="stat-value">12,481</div><div class="stat-label">Total Users</div></div>
+          <div class="stat-card"><div class="stat-card-top"><div class="stat-icon green">✅</div></div><div class="stat-value">11,024</div><div class="stat-label">Verified</div></div>
+          <div class="stat-card"><div class="stat-card-top"><div class="stat-icon orange">⏳</div></div><div class="stat-value">1,457</div><div class="stat-label">Pending</div></div>
+          <div class="stat-card"><div class="stat-card-top"><div class="stat-icon blue">🚫</div></div><div class="stat-value">12</div><div class="stat-label">Banned</div></div>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Email</th><th>College</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Rahul Sharma</strong></td><td>rahul@nit.ac.in</td><td>NIT Trichy</td><td><span class="status-badge status-active">✅ Verified</span></td><td><button class="btn btn-ghost btn-sm">View</button> <button class="btn btn-danger btn-sm" onclick="showToast('User banned','🚫')">Ban</button></td></tr>
+              <tr><td><strong>Priya Singh</strong></td><td>priya@iitb.ac.in</td><td>IIT Bombay</td><td><span class="status-badge status-active">✅ Verified</span></td><td><button class="btn btn-ghost btn-sm">View</button> <button class="btn btn-danger btn-sm" onclick="showToast('User banned','🚫')">Ban</button></td></tr>
+              <tr><td><strong>Ankit Dev</strong></td><td>ankit@bits.ac.in</td><td>BITS Pilani</td><td><span class="status-badge status-pending">⏳ Pending</span></td><td><button class="btn btn-success btn-sm" onclick="showToast('User approved!','✅')">Approve</button> <button class="btn btn-danger btn-sm" onclick="showToast('User rejected','🚫')">Reject</button></td></tr>
+              <tr><td><strong>Sneha Roy</strong></td><td>sneha@vit.ac.in</td><td>VIT Vellore</td><td><span class="status-badge status-banned">🚫 Banned</span></td><td><button class="btn btn-success btn-sm" onclick="showToast('User restored!','✅')">Restore</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="admin-listings" class="hidden">
+        <h2 class="section-title mb-24">Manage <span>Listings</span></h2>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Title</th><th>Seller</th><th>Price</th><th>Category</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>iPhone 13</td><td>Rahul S.</td><td>₹42,000</td><td>Electronics</td><td><span class="status-badge status-active">Active</span></td><td><button class="btn btn-danger btn-sm" onclick="showToast('Listing removed','🗑️')">Remove</button></td></tr>
+              <tr><td>Guitar (Acoustic)</td><td>Priya S.</td><td>₹3,500</td><td>Misc</td><td><span class="status-badge status-pending">Review</span></td><td><button class="btn btn-success btn-sm" onclick="showToast('Listing approved!','✅')">Approve</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="admin-reports" class="hidden">
+        <h2 class="section-title mb-24">User <span>Reports</span></h2>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Reported By</th><th>Against</th><th>Reason</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>Amir K.</td><td>Unknown seller</td><td>Fake listing</td><td><span class="status-badge status-pending">Open</span></td><td><button class="btn btn-success btn-sm" onclick="showToast('Report resolved','✅')">Resolve</button></td></tr>
+              <tr><td>Rina P.</td><td>Deepak S.</td><td>Harassment</td><td><span class="status-badge status-pending">Open</span></td><td><button class="btn btn-success btn-sm" onclick="showToast('Report resolved','✅')">Resolve</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="admin-restaurants" class="hidden">
+        <h2 class="section-title mb-24">Manage <span>Restaurants</span></h2>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Distance</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>🍛 Campus Café</td><td>Indian</td><td>On-Campus</td><td><span class="status-badge status-active">Active</span></td><td><button class="btn btn-danger btn-sm" onclick="showToast('Restaurant disabled','🚫')">Disable</button></td></tr>
+              <tr><td>🍕 Pizza Point</td><td>Fast Food</td><td>0.8km</td><td><span class="status-badge status-active">Active</span></td><td><button class="btn btn-danger btn-sm" onclick="showToast('Restaurant disabled','🚫')">Disable</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="admin-transactions" class="hidden">
+        <h2 class="section-title mb-24">Transactions</h2>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>ID</th><th>User</th><th>Type</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>#TXN001</td><td>Rahul S.</td><td>Food Order</td><td>₹140</td><td>May 8</td><td><span class="status-badge status-active">Success</span></td></tr>
+              <tr><td>#TXN002</td><td>Priya S.</td><td>Rental</td><td>₹200</td><td>May 7</td><td><span class="status-badge status-active">Success</span></td></tr>
+              <tr><td>#TXN003</td><td>Ankit D.</td><td>Marketplace</td><td>₹3,500</td><td>May 6</td><td><span class="status-badge status-pending">Pending</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ===================================================
+     MODALS
+     =================================================== -->
+
+<!-- Post Listing Modal -->
+<div class="modal-overlay" id="postListingModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>📋 Post a Listing</h3>
+      <button class="modal-close" onclick="closeModal('postListingModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form onsubmit="submitListing(event)">
+        <div class="form-group"><label class="form-label">Title</label><input type="text" placeholder="e.g. iPhone 13 128GB" required /></div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Price (₹)</label><input type="number" placeholder="e.g. 15000" required /></div>
+          <div class="form-group"><label class="form-label">Category</label>
+            <select><option>Electronics</option><option>Books & Notes</option><option>Furniture</option><option>Vehicles</option><option>Clothing</option><option>Miscellaneous</option></select>
+          </div>
+        </div>
+        <div class="form-group"><label class="form-label">Condition</label>
+          <select><option>New</option><option>Like New</option><option>Good</option><option>Fair</option><option>Poor</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Description</label><textarea rows="3" placeholder="Describe your item in detail..."></textarea></div>
+        <div class="form-group">
+          <label class="form-label">Images</label>
+          <div style="border:2px dashed var(--border);border-radius:var(--radius);padding:32px;text-align:center;color:var(--text3);cursor:pointer;" onclick="showToast('Image upload coming soon!','📸')">
+            📸 Click to upload images<br/><span class="text-sm">JPG, PNG up to 5MB each</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:8px;">
+          <button type="button" class="btn btn-ghost" onclick="closeModal('postListingModal')" style="flex:1">Cancel</button>
+          <button type="submit" class="btn btn-primary" style="flex:2">Post Listing 🚀</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Create Post Modal -->
+<div class="modal-overlay" id="createPostModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>📢 Create Community Post</h3>
+      <button class="modal-close" onclick="closeModal('createPostModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form onsubmit="submitPost(event)">
+        <div class="form-group"><label class="form-label">Post Title</label><input type="text" placeholder="What's this about?" required /></div>
+        <div class="form-group"><label class="form-label">Category</label>
+          <select id="postCategory">
+            <option value="event">🎉 Event</option>
+            <option value="internship">💼 Internship</option>
+            <option value="ticket">🎫 Ticket</option>
+            <option value="announce">📢 Announcement</option>
+            <option value="opportunity">🚀 Opportunity</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Content</label><textarea rows="4" placeholder="Write your post content here..." required></textarea></div>
+        <div style="display:flex;gap:12px;margin-top:8px;">
+          <button type="button" class="btn btn-ghost" onclick="closeModal('createPostModal')" style="flex:1">Cancel</button>
+          <button type="submit" class="btn btn-primary" style="flex:2">Publish Post 📢</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Product Detail Modal -->
+<div class="modal-overlay" id="productDetailModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="pdTitle">Product Detail</h3>
+      <button class="modal-close" onclick="closeModal('productDetailModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="pdBody"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Modal -->
+<div class="modal-overlay" id="cartModal">
+  <div class="modal-box" style="max-width:480px;">
+    <div class="modal-header">
+      <h3>🛒 Your Cart</h3>
+      <button class="modal-close" onclick="closeModal('cartModal')">✕</button>
+    </div>
+    <div class="modal-body" id="cartBody"></div>
+  </div>
+</div>
+
+<!-- Restaurant Menu Modal -->
+<div class="modal-overlay" id="restaurantModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="restName">Restaurant Menu</h3>
+      <button class="modal-close" onclick="closeModal('restaurantModal')">✕</button>
+    </div>
+    <div class="modal-body" id="restMenuBody"></div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
